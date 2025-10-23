@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Point of interest{% endblock %}
+
+{% block content %}
+    <h1>{{ point.name }}</h1>
+    <h2>Описание</h2>
+    <p>{{ point.description }}</p>
+    <h2>Координаты</h2>
+    <p>{{ point.x_coord }}, {{ point.y_coord }}</p>
+    <h2>Время на осмотр</h2>
+    <p>{{ point.time_for_viewing }} минут.</p>
+{% endblock %}

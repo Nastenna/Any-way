@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Points of interest{% endblock %}
+
+{% block content %}
+    <h1>Точки</h1>
+    <ul>
+        {% for point in points.all %}
+            <li><a href="{% url 'point' point.id %}">{{ point.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

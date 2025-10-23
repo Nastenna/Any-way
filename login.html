@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class = "login">
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+<form method="post">
+  <h1 title="Вход на сайт">Регистрация</h1>
+  {% csrf_token %}
+  {{ form.as_table }}
+  <div style="text-align: center;"><button type="submit">Log In</button></div>
+</form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Routes{% endblock %}
+{% block header_map %}
+{% if map %}
+    {{ map.header.render | safe }}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+    <h1>Маршруты</h1>
+    {% if map %}
+
+  	{{ map | safe}}
+{#  	<script>#}
+{#    	{{map.script.render|safe}}#}
+{#  	</script>#}
+	{% endif %}
+    <ul>
+        {% for route in routes.all %}
+            <li><a href="{% url 'route' route.id %}">{{ route.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
